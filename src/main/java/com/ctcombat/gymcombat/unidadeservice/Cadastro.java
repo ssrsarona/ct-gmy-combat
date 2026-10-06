@@ -9,8 +9,10 @@ import com.ctcombat.gymcombat.usuario.Usuario;
 public class Cadastro {
     public static List<Unidade> listaUnidades = new ArrayList<>();
     public void cadastro(Scanner sc){
-        int rod;
-        do{
+        
+        boolean rodando = true;
+
+        while(rodando){
 
             System.out.println("Nome da unidade:");
             String nomeDigitado = sc.nextLine();
@@ -36,10 +38,11 @@ public class Cadastro {
 
             System.out.println("Cadastro concluido com sucesso!");
             System.out.println(" digite 1 - para novo cadastro ou digite 0 - para sair");
-            rod = sc.nextInt();
+            int rod = sc.nextInt();
             sc.nextLine();
-
-        }while(rod != 0);
-        
+            if(rod == 0){
+                rodando = false;
+            }
+        }     
     }
 }

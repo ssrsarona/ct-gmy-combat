@@ -1,5 +1,4 @@
-package com.ctcombat.gymcombat.menu;
-import com.ctcombat.gymcombat.usuario.*;
+package com.ctcombat.gymcombat.usuario;
 import java.util.*;
 
 public class Gerente {

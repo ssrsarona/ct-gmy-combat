@@ -1,9 +1,10 @@
 package com.ctcombat.gymcombat;
 import java.util.*;
 
-import com.ctcombat.gymcombat.menu.Gerente;
-import com.ctcombat.gymcombat.menu.Supervisor;
+import com.ctcombat.gymcombat.menu.MenuSupervisor;
+import com.ctcombat.gymcombat.usuario.Gerente;
 import com.ctcombat.gymcombat.usuario.Perfil;
+import com.ctcombat.gymcombat.usuario.Supervisor;
 import com.ctcombat.gymcombat.usuario.Usuario;
 public class Main {
 
@@ -44,9 +45,14 @@ public class Main {
                         System.out.println("Bem-Vindo " + userEncontrado.getPerfil());
 
                         switch (userEncontrado.getPerfil()) 
+                        
                         {
                             case SUPERVISOR:
-                            { new Supervisor().menu(sc, mapUsuario); break; }
+                            { 
+                                Supervisor supervisor = new Supervisor();
+                                supervisor.iniciar(sc, mapUsuario);
+                                break; 
+                            }
                             case GERENTE: 
                             { new Gerente().menu(sc, mapUsuario); break; }
                             default: { System.out.println("ERRO!: Perfil NAO CADASTRADO"); }

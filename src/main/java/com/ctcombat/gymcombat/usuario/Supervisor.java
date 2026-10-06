@@ -10,9 +10,8 @@ public class Supervisor   {
 
     public void iniciar(Scanner sc, Map<String, Usuario> mapUsuario ){
         MenuSupervisor menuSup = new MenuSupervisor();
-        menuSup.exibirMenu();
-
         int opcao; 
+
         do{
             opcao = menuSup.exibirMenu();
 
@@ -21,8 +20,9 @@ public class Supervisor   {
                 case 1:
                 {
                     MenuUnidade menuUni = new MenuUnidade();
-                    menuUni.exibirMenuUni();
+
                     int opUn = menuUni.exibirMenuUni();
+                    
                     switch(opUn)
                     {
                         case 1:
